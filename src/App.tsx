@@ -9,7 +9,7 @@ interface ComponentProps {
 export class ClassComponent extends React.Component<ComponentProps> {
   render() {
     return     <div>
-        Class component styling...
+        <div>Additions within class component.</div>
         <FunctionalComponent>{this.props.children}</FunctionalComponent>
       </div>
   }
@@ -25,11 +25,10 @@ function FunctionalComponent({ children }: ComponentProps) {
   );
 }
 
-
-
 function App() {
   return (
     <div className="App">
+      <h1>Testing github pages with react and github actions..</h1>
       <header className="App-header">
         <FunctionalComponent> 
           <div>Child of <code className="App-code">FuncitonalComponent</code>.</div>
