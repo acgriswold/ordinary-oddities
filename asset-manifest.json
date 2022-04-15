@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ordinary-oddities/static/css/main.e3945e14.css",
-    "main.js": "/ordinary-oddities/static/js/main.bbe2087e.js",
+    "main.js": "/ordinary-oddities/static/js/main.5f3d9bfa.js",
     "static/js/787.35465da7.chunk.js": "/ordinary-oddities/static/js/787.35465da7.chunk.js",
     "index.html": "/ordinary-oddities/index.html",
     "main.e3945e14.css.map": "/ordinary-oddities/static/css/main.e3945e14.css.map",
-    "main.bbe2087e.js.map": "/ordinary-oddities/static/js/main.bbe2087e.js.map",
+    "main.5f3d9bfa.js.map": "/ordinary-oddities/static/js/main.5f3d9bfa.js.map",
     "787.35465da7.chunk.js.map": "/ordinary-oddities/static/js/787.35465da7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e3945e14.css",
-    "static/js/main.bbe2087e.js"
+    "static/js/main.5f3d9bfa.js"
   ]
 }
