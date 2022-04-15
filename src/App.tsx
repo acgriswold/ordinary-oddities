@@ -8,8 +8,9 @@ interface ComponentProps {
 /* Class component example */
 export class UnderConstructionMessage extends React.Component<ComponentProps> {
   render() {
-    let startDate = new Date('2022-02-15T14:04:15.524486Z');
+    let startDate = new Date('2022-04-15T10:14:04.069Z');
     let now = new Date();
+    let msDifference = now.getTime() - startDate.getTime();
 
     return (
       <div>
@@ -19,13 +20,27 @@ export class UnderConstructionMessage extends React.Component<ComponentProps> {
           </span>
         </div>
         <div>
-          It's been
-          <span className='App-code'>{' '}{(now.getDate() - startDate.getDate())}{' '}</span>
-          days and 
-          <span className='App-code'>{' '}{(now.getMinutes() - startDate.getMinutes())}{' '}</span>
-          minutes spent not finishing project...
+          I've spent
+          {' '}{this.convertMsToTime(msDifference)}{' '}
+          not finishing project...
         </div>
       </div>
+    )
+  }
+  
+  convertMsToTime(milliseconds: number) {
+    let seconds = Math.floor(milliseconds / 1000);
+    let minutes = Math.floor(seconds / 60);
+    let hours = Math.floor(minutes / 60);
+    let days = Math.floor(hours / 24);
+  
+    return (
+    <span>
+      <span className='App-code'>{days}</span> day(s), {' '}
+      <span className='App-code'>{hours}</span> hour(s), {' '}
+      <span className='App-code'>{minutes % 60}</span> minutes(s) and, {' '}
+      <span className='App-code'>{seconds % 60}</span> second(s)
+    </span>
     )
   }
 }
