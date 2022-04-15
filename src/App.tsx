@@ -1,23 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, ReactNode } from 'react';
 import './App.css';
+
+interface ComponentProps {
+  children?: ReactNode;
+}
+
+/* Class component example */
+export class ClassComponent extends React.Component<ComponentProps> {
+  render() {
+    return     <div>
+        Class component styling...
+        <FunctionalComponent>{this.props.children}</FunctionalComponent>
+      </div>
+  }
+}
+
+/* Functional component example */
+function FunctionalComponent({ children }: ComponentProps) {
+  return (
+  <div>
+    Class component styling...
+    {children}
+  </div>
+  );
+}
+
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <FunctionalComponent> 
+          <div>Child of <code className="App-code">FuncitonalComponent</code>.</div>
+        </FunctionalComponent>
+        <ClassComponent> 
+          <div>Child of <code className="App-code">ClassComponent</code>.</div>
+        </ClassComponent>
       </header>
     </div>
   );
