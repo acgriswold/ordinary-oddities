@@ -15,14 +15,15 @@ export class UnderConstructionMessage extends React.Component<ComponentProps> {
     return (
       <div>
         <div>Construction of site started {' '}
-          <span className='App-code'>
-            {startDate.toLocaleDateString()}{' '}
-          </span>
+          <span className='App-code'>{startDate.toLocaleDateString()}</span>.
         </div>
         <div>
           I've spent
           {' '}{this.convertMsToTime(msDifference)}{' '}
-          not finishing project...
+          not finishing this project...
+        </div>
+        <div>
+          {this.props.children}
         </div>
       </div>
     )
@@ -48,10 +49,12 @@ export class UnderConstructionMessage extends React.Component<ComponentProps> {
 /* Functional component example */
 function GreetingsMessage({ children }: ComponentProps) {
   return (
-  <h1>
-    Ordinary oddities
-    {children}
-  </h1>
+    <div>
+      <h1>
+        Ordinary oddities
+      </h1>
+      <h3>{children}</h3>
+    </div>
   );
 }
 
@@ -59,11 +62,8 @@ function App() {
   return (
     <div className={'App container'}>
       <header className="App-header">
-        <GreetingsMessage /> 
-
-        <UnderConstructionMessage> 
-          <div>Child of <code className="App-code">ClassComponent</code>.</div>
-        </UnderConstructionMessage>
+        <GreetingsMessage />
+        <UnderConstructionMessage />
       </header>
     </div>
   );
