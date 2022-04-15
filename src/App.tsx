@@ -6,36 +6,49 @@ interface ComponentProps {
 }
 
 /* Class component example */
-export class ClassComponent extends React.Component<ComponentProps> {
+export class UnderConstructionMessage extends React.Component<ComponentProps> {
   render() {
-    return     <div>
-        <div>Additions within class component.</div>
-        <FunctionalComponent>{this.props.children}</FunctionalComponent>
+    let startDate = new Date('2022-02-15T14:04:15.524486Z');
+    let now = new Date();
+
+    return (
+      <div>
+        <div>Construction of site started {' '}
+          <span className='App-code'>
+            {startDate.toLocaleDateString()}{' '}
+          </span>
+        </div>
+        <div>
+          It's been
+          <span className='App-code'>{' '}{(now.getDate() - startDate.getDate())}{' '}</span>
+          days and 
+          <span className='App-code'>{' '}{(now.getMinutes() - startDate.getMinutes())}{' '}</span>
+          minutes spent not finishing project...
+        </div>
       </div>
+    )
   }
 }
 
 /* Functional component example */
-function FunctionalComponent({ children }: ComponentProps) {
+function GreetingsMessage({ children }: ComponentProps) {
   return (
-  <div>
-    Class component styling...
+  <h1>
+    Ordinary oddities
     {children}
-  </div>
+  </h1>
   );
 }
 
 function App() {
   return (
-    <div className="App">
-      <h1>Testing github pages with react and github actions..</h1>
+    <div className={'App container'}>
       <header className="App-header">
-        <FunctionalComponent> 
-          <div>Child of <code className="App-code">FuncitonalComponent</code>.</div>
-        </FunctionalComponent>
-        <ClassComponent> 
+        <GreetingsMessage /> 
+
+        <UnderConstructionMessage> 
           <div>Child of <code className="App-code">ClassComponent</code>.</div>
-        </ClassComponent>
+        </UnderConstructionMessage>
       </header>
     </div>
   );

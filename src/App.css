@@ -1,14 +1,21 @@
 .App {
+  background-color: #282c34;
   text-align: center;
+  
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  justify-content: center;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: min(100% - 2rem, 700px);
+  
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -18,5 +25,6 @@
 }
 
 .App-code {
-  color: #34ad90
+  color: #34ad90;
+  font-weight: lighter;
 }
