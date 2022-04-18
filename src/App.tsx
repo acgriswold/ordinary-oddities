@@ -38,7 +38,7 @@ export class UnderConstructionMessage extends React.Component<ComponentProps> {
     return (
     <span>
       <span className='App-code'>{days}</span> day(s), {' '}
-      <span className='App-code'>{hours}</span> hour(s), {' '}
+      <span className='App-code'>{hours   % 24}</span> hour(s), {' '}
       <span className='App-code'>{minutes % 60}</span> minutes(s) and, {' '}
       <span className='App-code'>{seconds % 60}</span> second(s)
     </span>
