@@ -5,7 +5,7 @@ function Page404() {
   return (
     <header className="App-header">
       <p>Whooops... You seem lost..</p>
-      <Link to="/ordinary-oddities">Let's get you back home.</Link>
+      <Link to="/">Let's get you back home.</Link>
     </header>
   );
 }
