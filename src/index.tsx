@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import "./styles/index.css";
 import App from "./App";
 import Page404 from "./pages/Page404";
+import ArtProjects from "./pages/ArtProjects";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -14,6 +15,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path={process.env.PUBLIC_URL} element={<App />} />
+        <Route path={`${process.env.PUBLIC_URL}/art/*`} element={<ArtProjects />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>
