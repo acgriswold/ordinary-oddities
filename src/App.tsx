@@ -1,6 +1,10 @@
 import React, { ReactNode } from "react";
 import "./styles/App.css";
 
+import Page404 from "./pages/Page404";
+import ArtProjects from "./pages/ArtProjects";
+import { Route, Routes } from "react-router-dom";
+
 interface ComponentProps {
   children?: ReactNode;
 }
@@ -54,12 +58,22 @@ function GreetingsMessage({ children }: ComponentProps) {
   );
 }
 
-function App() {
+function DefaultPage() {
   return (
     <header className="App-header">
       <GreetingsMessage />
       <UnderConstructionMessage />
     </header>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<DefaultPage />} />
+      <Route path="/art/*" element={<ArtProjects />} />
+      <Route path="*" element={<Page404 />} />
+    </Routes>
   );
 }
 
